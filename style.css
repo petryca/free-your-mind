@@ -19,6 +19,7 @@ body {
 
 a {
     color: inherit;
+    text-decoration: none;
 }
 
 img {
@@ -63,6 +64,7 @@ header {
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
+    box-shadow: 0 0 3rem rgba(0,0,0,0.8);
 }
 
 #hero {
@@ -97,6 +99,133 @@ header p {
 }
 
 #intro {
-    height: 300vh;
+    background-image: linear-gradient(to right bottom, #261C5C, #8566FF);
+    color: #fff;
 }
+
+#intro div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 800px) {
+    #intro div {
+        flex-direction: column;   
+    }
+}
+
+#intro svg {
+    display: block;
+    width: 8rem;
+    height: auto;
+    margin: 1.5rem;
+    fill: transparent;
+    stroke: #fff;
+    stroke-width: 2;
+}
+
+#intro p {
+    font-size: 3rem;
+    font-weight: 800;
+    margin: 0.5rem;
+    text-shadow: 0 0 16px rgba(0,0,0,0.5);
+}
+
+.button {
+    display: inline-block;
+    border-width: 2px;
+    border-style: solid;
+    padding: 1.6rem 2.2rem;
+    margin: 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 400;
+    transition: transform 0.3s;
+}
+
+.button:hover {
+    transform: scale(1.1);
+}
+
+#icon-kick circle:last-child {
+    animation-name: pulse;
+    animation-duration: 500ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-out;
+}
+@keyframes pulse {
+    10% {
+        r: 0;
+    }
+    100% {
+        r: 30;
+    }
+}
+
+#icon-knob line  {
+    animation-name: rotate;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    transform-origin: center;
+}
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#icon-equalizer line {
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-out;
+    animation-direction: alternate;
+    transform-origin: center bottom;
+    transform-box: fill-box;
+}
+#icon-equalizer line:nth-of-type(1) {
+    animation-name: eq-a;
+    animation-duration: 400ms;
+}
+#icon-equalizer line:nth-of-type(2) {
+    animation-name: eq-b;
+    animation-duration: 800ms;
+}
+#icon-equalizer line:nth-of-type(3) {
+    animation-name: eq-c;
+    animation-duration: 700ms;
+}
+#icon-equalizer line:nth-of-type(4) {
+    animation-name: eq-d;
+    animation-duration: 800ms;
+}
+#icon-equalizer line:nth-of-type(5) {
+    animation-name: eq-e;
+    animation-duration: 300ms;
+}
+@keyframes eq-a {
+    0%   { transform: scale(1, 0.5); }
+    50%  { transform: scale(1, 0.8); }
+    100% { transform: scale(1, 0.3); }
+}
+@keyframes eq-b {
+    0%   { transform: scale(1, 1);   }
+    50%  { transform: scale(1, 1.1); }
+    100% { transform: scale(1, 0.7); }
+}
+@keyframes eq-c {
+    0%   { transform: scale(1, 1);   }
+    50%  { transform: scale(1, 1.4); }
+    100% { transform: scale(1, 0.6); }
+}
+@keyframes eq-d {
+    0%   { transform: scale(1, 1);   }
+    50%  { transform: scale(1, 1.8); }
+    100% { transform: scale(1, 0.8); }
+}
+@keyframes eq-e {
+    0%   { transform: scale(1, 1);   }
+    50%  { transform: scale(1, 1.2); }
+    100% { transform: scale(1, 0.7); }
+}
+
 

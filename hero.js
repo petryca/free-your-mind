@@ -56,11 +56,6 @@
         exited() {
             clearInterval(timer);
         }
-    });
-    
-    
-    
-    
-    
+    }); 
     
 })();
